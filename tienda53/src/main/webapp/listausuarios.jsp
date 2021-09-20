@@ -64,7 +64,7 @@
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i class="fas fa-store"></i></i> Tienda virtual</a>
+			<a class="navbar-brand links" href="index.html"><i class="fas fa-store"></i></i> Bienvenid@ a la Tienda virtual</a>
 		</div>
 	</nav>
 
@@ -73,7 +73,7 @@
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp">
 			<i class="fas fa-users"></i> Usuarios</a> 
-			<a class="navbar-brand links" href="listausuarios.jsp">
+			<a class="navbar-brand links" href="listaclientes.jsp">
 			<i class="fas fa-address-book"></i> Clientes</a>
 			<a class="navbar-brand links" href="listausuarios.jsp">
 			<i class="fas fa-truck"></i> Proveedores</a>
@@ -85,14 +85,39 @@
 			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
-	
-	
+	<center><h1 class= "titulomodulo"> </i> Modulo lista de usuarios</h1></center>
+	<br>
+	<br>
+	<center>
+		<div style="padding-left: 5px;">
+	<div class="badge bg-primary text-wrap" style="width: 15rem;" ><i class="fas fa-cogs"></i> Funciones
+</div>
+	</div>
+<br>
+	<br>
+<section>
+
+<div class="nuevo">
+<div class="btn-group-vertical">
+  <a href="insertarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #006666" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar usuario</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar usuario</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar usuario</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #333333" aria-current="page"><i class="fas fa-search"></i> Buscar usuario</a>
+</div>
+
+
+</section>
 	<!-- contenido  -->
-	
+	<br>
+	<br>
 	<div style="padding-left: 5px;">
-	
-		<h1><i class="fas fa-list-ol"></i> Tabla de usuarios</h1>
-			<div class="container">
+	<div class="badge bg-primary text-wrap" style="width: 15rem;" ><i class="fas fa-list-ol"></i> Tabla de usuarios
+</div>
+</center>
+	<br>
+	<br>
+	<br>
+				<div class="container2">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
 					<div class="col align-self-center" id="usuariosinfo">
@@ -101,30 +126,14 @@
 	
 				</div>
 			</div>
-	
-		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
-			<div class="container">
-				<div class="row">
-					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarusuario.jsp'">
-					<i class="fas fa-plus-circle"></i> Agregar usuario</button>
-					<button type="button" class="btn btn-danger">
-					<i class="fas fa-trash"></i> Eliminar usuario</button>
-					<button type="button" class="btn btn-warning">
-					<i class="fas fa-pen-alt"></i> Actualizar usuario</button>
-					<button type="button" class="btn btn-primary">
-					<i class="fas fa-search"></i> Buscar un usuario</button>
-					<button type="button" class="btn btn-primary">
-					<i class="fas fa-search"></i> Listar todos los usuarios</button>
-				</div>
-			</div>
-	</div>
-
+	<br>
+	<br>
+	<br>
 
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
 		<div class="row justify-content-between">
-			<div class="col-4">
 				<a class="navbar-brand links" href="#">
-					&copy; 2021 >Tienda Virtual </a>
+					&copy; 2021 Tienda Virtual Grupo 53 Equipo 3 </a>
 			</div>
 		</div>
 	</nav>
