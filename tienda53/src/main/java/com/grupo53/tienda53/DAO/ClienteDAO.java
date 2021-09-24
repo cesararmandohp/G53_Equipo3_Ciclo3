@@ -6,7 +6,7 @@ import com.grupo53.tienda53.DTO.ClienteVO;
 
 
 /**
- * Clase que permite el acceso a la base de datos
+ * Clase que permite el acceso a la base de datos.
  *
  */
 
