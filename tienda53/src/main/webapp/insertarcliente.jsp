@@ -89,7 +89,7 @@
 		
 		
 			<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Error al crear el cliente, verifique que no exista un usuario con la cédula ingresados</div>
+					role="alert">Error al crear el cliente, verifique que no exista un usuario con la cédula ingresada</div>
 					
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">Cliente creado con éxito</div>
@@ -151,28 +151,22 @@
 	</nav>
 	<script>
 		function enviar() {
-			var x = document.getElementById("telefono_cliente").value;
+				
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
 			req.open('GET', 'http://localhost:8080/listarclientes', false);
 			req.send(null);
-			var usuarios=null;
+			var clientes=null;
 			if (req.status == 200)
-				usuarios=JSON.parse(req.responseText);
+				clientes=JSON.parse(req.responseText);
 			  	console.log(JSON.parse(req.responseText));
 			  	
-			for (i = 0; i < usuarios.length; i++) {
-				console.log(usuarios[i].usuario);
-				console.log(usuarios[i].cedula_usuario);
-				if (usuarios[i].usuario ===x ) {
-					console.log(usuarios[i].usuario +" "+x);	
-					coincidencia =true
-					break;
-				}
-				
-				if (usuarios[i].cedula_usuario ===y ) {
-					console.log(usuarios[i].cedula_usuario +" "+y);	
+			for (i = 0; i < clientes.length; i++) {
+				console.log(clientes[i].cedula_cliente);
+								
+				if (clientes[i].cedula_cliente ==y ) {
+					console.log(clientes[i].cedula_cliente +" "+y);	
 					coincidencia =true
 					break;
 				}
