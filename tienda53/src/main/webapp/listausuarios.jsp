@@ -91,7 +91,7 @@
 	
 	<div style="padding-left: 5px;">
 	
-		<h1><i class="fas fa-list-ol"></i> Tabla de usuarios</h1>
+		<h1 class="sub-menu"><i class="fas fa-list-ol"></i> Tabla de usuarios</h1>
 			<div class="container">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
@@ -102,7 +102,7 @@
 				</div>
 			</div>
 	
-		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
+		<h1 class="sub-menu"><i class="fas fa-cogs"></i> Operaciones</h1>
 			<div class="container">
 				<div class="row">
 					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarusuario.jsp'">
@@ -124,7 +124,7 @@
 		<div class="row justify-content-between">
 			<div class="col-4">
 				<a class="navbar-brand links" href="#">
-					&copy; 2021 >Tienda Virtual </a>
+					&copy; 2021 Tienda Virtual </a>
 			</div>
 		</div>
 	</nav>
