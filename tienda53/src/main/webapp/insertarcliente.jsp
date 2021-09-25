@@ -69,7 +69,7 @@
 <section>
 <br>
 <div class="nuevo">
-<div class="btn-group-vertical">
+<div class="btn-group-horizontal">
   <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #006666" aria-current="page"><i class="fas fa-plus-circle"></i> Lista de clientes</a>
   <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar cliente</a>
   <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar cliente</a>

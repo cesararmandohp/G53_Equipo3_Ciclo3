@@ -97,9 +97,9 @@ loadclientes();
 	<br>
 <section>
 <div class="nuevo">
-<div class="btn-group-vertical">
+<div class="btn-group-horizontal">
   <a href="insertarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #006666" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar cliente</a>
-  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar cliente</a>
+  <a href="eliminarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar cliente</a>
   <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar cliente</a>
   <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #333333" aria-current="page"><i class="fas fa-search"></i> Buscar cliente</a>
 </div>

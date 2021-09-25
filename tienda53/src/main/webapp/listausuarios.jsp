@@ -98,11 +98,11 @@
 <section>
 
 <div class="nuevo">
-<div class="btn-group-vertical">
+<div class="btn-group-horizontal">
   <a href="insertarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #006666" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar usuario</a>
-  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar usuario</a>
-  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar usuario</a>
-  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #333333" aria-current="page"><i class="fas fa-search"></i> Buscar usuario</a>
+  <a href="eliminarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar usuario</a>
+  <a href="actualizarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar usuario</a>
+  <a href="buscarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #333333" aria-current="page"><i class="fas fa-search"></i> Buscar usuario</a>
 </div>
 
 
