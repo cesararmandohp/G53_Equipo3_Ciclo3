@@ -36,7 +36,7 @@
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i class="fas fa-store"></i></i> Tienda virtual</a>
+			<a class="navbar-brand links" href="index.html"><i class="fas fa-store"></i></i> Bienvenid@ a la Tienda virtual</a>
 		</div>
 	</nav>
 
@@ -58,16 +58,38 @@
 			</a>
 		</div>
 	</nav>
+		<center><h1 class= "titulomodulo"> </i> Modulo agregar clientes</h1></center>
+	<br>
+	<br>	
+	<center>
+<div style="padding-left: 5px;">
+	<div class="badge bg-primary text-wrap" style="width: 15rem;" ><i class="fas fa-cogs"></i> Funciones
+</div>
+<br>
+<section>
+<br>
+<div class="nuevo">
+<div class="btn-group-vertical">
+  <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #006666" aria-current="page"><i class="fas fa-plus-circle"></i> Lista de clientes</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar cliente</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar cliente</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #333333" aria-current="page"><i class="fas fa-search"></i> Buscar cliente</a>
+</div>
 
+</div>
+</center>
+</section>
+<center>		
+<br>
 	<div style="padding-left: 5px">
 		<h1>
 			<i class="fas fa-plus-circle"></i> Datos del nuevo cliente
 		</h1>
-		<div class="container">
+		<div class="containerInsertarUsuario">
 		
 		
 			<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Error al crear el cliente, verifique que no exista un usuario con la cédula ingresados</div>
+					role="alert">Error al crear el cliente, verifique que no exista un usuario con la cédula ingresada</div>
 					
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert">Cliente creado con éxito</div>
@@ -118,68 +140,33 @@
 				<i class="fas fa-check"></i> Insertar nuevo cliente
 			</button>
 
-
-
-
-			<h1>
-				<i class="fas fa-cogs"></i> Operaciones
-			</h1>
-			<div class="container">
-				<div class="row">
-					<button type="button" class="btn btn-success"
-						onclick="window.location.href='/insertarcliente.jsp'">
-						<i class="fas fa-plus-circle"></i> Agregar cliente
-					</button>
-					<button type="button" class="btn btn-danger">
-						<i class="fas fa-trash"></i> Eliminar cliente
-					</button>
-					<button type="button" class="btn btn-warning">
-						<i class="fas fa-pen-alt"></i> Actualizar cliente
-					</button>
-					<button type="button" class="btn btn-primary">
-						<i class="fas fa-search"></i> Buscar un cliente
-					</button>
-					<button type="button" class="btn btn-primary"
-					onclick="window.location.href='/listaclientes.jsp'">
-						<i class="fas fa-search"></i> Listar todos los clientes
-					</button>
-				</div>
-
-			</div>
 		</div>
 
 	</div>
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
 		<div class="row justify-content-between">
-			<div class="col-4">
-				<a class="navbar-brand links" href="#">&copy; 2021 >Tienda Virtual</a>
+				<a class="navbar-brand links" href="#">&copy; 2021 Tienda Virtual Grupo 53 Equipo 3 </a>
 			</div>
 		</div>
 	</nav>
 	<script>
 		function enviar() {
-			var x = document.getElementById("telefono_cliente").value;
+				
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
 			req.open('GET', 'http://localhost:8080/listarclientes', false);
 			req.send(null);
-			var usuarios=null;
+			var clientes=null;
 			if (req.status == 200)
-				usuarios=JSON.parse(req.responseText);
+				clientes=JSON.parse(req.responseText);
 			  	console.log(JSON.parse(req.responseText));
 			  	
-			for (i = 0; i < usuarios.length; i++) {
-				console.log(usuarios[i].usuario);
-				console.log(usuarios[i].cedula_usuario);
-				if (usuarios[i].usuario ===x ) {
-					console.log(usuarios[i].usuario +" "+x);	
-					coincidencia =true
-					break;
-				}
-				
-				if (usuarios[i].cedula_usuario ===y ) {
-					console.log(usuarios[i].cedula_usuario +" "+y);	
+			for (i = 0; i < clientes.length; i++) {
+				console.log(clientes[i].cedula_cliente);
+								
+				if (clientes[i].cedula_cliente ==y ) {
+					console.log(clientes[i].cedula_cliente +" "+y);	
 					coincidencia =true
 					break;
 				}
@@ -207,7 +194,6 @@
 				document.getElementById("nombre_cliente").value = "";
 				document.getElementById("telefono_cliente").value = "";
 	 			xhr.send(formData);
-
 			}else{
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");

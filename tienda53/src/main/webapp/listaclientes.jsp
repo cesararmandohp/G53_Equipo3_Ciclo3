@@ -64,7 +64,7 @@ loadclientes();
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html"><i class="fas fa-store"></i></i> Tienda virtual</a>
+			<a class="navbar-brand links" href="index.html"><i class="fas fa-store"></i></i> Bienvenid@ a la Tienda virtual</a>
 		</div>
 	</nav>
 
@@ -85,13 +85,36 @@ loadclientes();
 			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
-	
-	
+		<center><h1 class= "titulomodulo"> </i> Modulo lista de clientes</h1></center>
+	<br>
+	<br>
+	<center>
+		<div style="padding-left: 5px;">
+	<div class="badge bg-primary text-wrap" style="width: 15rem;" ><i class="fas fa-cogs"></i> Funciones
+</div>
+	</div>
+<br>
+	<br>
+<section>
+<div class="nuevo">
+<div class="btn-group-vertical">
+  <a href="insertarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #006666" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar cliente</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar cliente</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar cliente</a>
+  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #333333" aria-current="page"><i class="fas fa-search"></i> Buscar cliente</a>
+</div>
+<br>
+
+</section>
 	<!-- contenido  -->
 	
 	<div style="padding-left: 5px;">
-	
-		<h1><i class="fas fa-list-ol"></i> Tabla de clientes</h1>
+	<br>
+	<br>
+	<div style="padding-left: 5px;">
+	<div class="badge bg-primary text-wrap" style="width: 15rem;" ><i class="fas fa-list-ol"></i> Tabla de clientes</div>
+	<br>
+	<br>
 			<div class="container">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
@@ -102,29 +125,12 @@ loadclientes();
 				</div>
 			</div>
 	
-		<h1><i class="fas fa-cogs"></i> Operaciones</h1>
-			<div class="container">
-				<div class="row">
-					<button type="button" class="btn btn-success" onclick="window.location.href='/insertarcliente.jsp'">
-					<i class="fas fa-plus-circle"></i> Agregar cliente</button>
-					<button type="button" class="btn btn-danger">
-					<i class="fas fa-trash"></i> Eliminar cliente</button>
-					<button type="button" class="btn btn-warning">
-					<i class="fas fa-pen-alt"></i> Actualizar cliente</button>
-					<button type="button" class="btn btn-primary">
-					<i class="fas fa-search"></i> Buscar un cliente</button>
-					<button type="button" class="btn btn-primary">
-					<i class="fas fa-search"></i> Listar todos los clientes</button>
-				</div>
-			</div>
 	</div>
 
 
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
-		<div class="row justify-content-between">
-			<div class="col-4">
 				<a class="navbar-brand links" href="#">
-					&copy; 2021 >Tienda Virtual </a>
+					&copy; 2021 Tienda Virtual Grupo 53 Equipo 3 </a>
 			</div>
 		</div>
 	</nav>
