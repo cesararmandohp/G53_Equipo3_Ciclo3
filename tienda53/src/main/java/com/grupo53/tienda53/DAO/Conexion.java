@@ -12,7 +12,7 @@ public class Conexion {
 	/** Parametros de conexión */
 	static String nombre_base_datos="tienda";
 	static String usuariobd	="root";
-	static String clavebd="mintic53";
+	static String clavebd="mintic";
 	static String url="jdbc:mysql://127.0.0.1/"+nombre_base_datos;
 	
 	//objeto sin inicializar de la conexión

@@ -28,10 +28,10 @@ public class ClienteController {
 	}
 
 	@GetMapping("/consultarcliente")
-	public ArrayList<ClienteVO> consultarClientes(String cliente) {
-		ClienteDAO Dao = new ClienteDAO();
-		return Dao.consultarCliente(cliente);
-	}
+    public ArrayList<ClienteVO> consultarClientes(Integer cedula_cliente) {
+        ClienteDAO Dao = new ClienteDAO();
+        return Dao.consultarCliente(cedula_cliente);
+    }
 
 	@GetMapping("/listarclientes")
 	public ArrayList<ClienteVO> listaDeClientes() {
@@ -47,7 +47,7 @@ public class ClienteController {
 	@PutMapping("/actualizarcliente")
 	public void actualizarCliente(ClienteVO cliente) {
 		ClienteDAO Dao = new ClienteDAO();
-		Dao.registrarCliente(cliente);
+		Dao.actualizarCliente(cliente);
 	}
 	
 
