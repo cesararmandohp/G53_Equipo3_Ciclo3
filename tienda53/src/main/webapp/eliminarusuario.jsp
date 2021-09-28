@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Actualizando usuario</title>
+<title>Eliminar usuario</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -27,7 +27,10 @@
 <!-- Cargando mi hoja de estilo -->
 <link href="style.css" rel="stylesheet" type="text/css" />
 
+
+
 </head>
+
 
 <body>
 	<!-- Navbar-->
@@ -42,7 +45,7 @@
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
@@ -55,11 +58,11 @@
 			</a>
 		</div>
 	</nav>
-<center><h1 class= "titulomoduloActualizar"> </i> Módulo actualizar usuario</h1></center>		
-<br>
-	<br>
-	
+		<center><h1 class= "titulomoduloEliminar"> </i> Módulo eliminar usuario</h1></center>
+		<br>
+		<br>
 	<center>
+
 	<div class="badge bg-primary text-wrap" style="width: 60rem;" ><i class="fas fa-cogs"></i> Funciones
 </div>
 <section>
@@ -67,78 +70,52 @@
 <div class="btn-group">
   <a href="listausuarios.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-table"></i> Lista de usuarios</a>
   <a href="insertarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar usuarios</a>
+  <a href="actualizarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar usuarios</a>
   <a href="buscarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-search"></i> Buscar usuarios</a>
-  <a href="eliminarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-trash"></i> Eliminar usuario</a>
 </div>
 
 </div>
 </center>
 </section>
+	<br>
+	<br>
 
-<br>
-<br>
-<center>
-	<div style="padding-left: 5px">
+	<center>
+<div style="padding-left: 1px">
 
-		<div class="containerActualizarUsuario">
+<div class="containerEliminarUsuario">
 
-		<h4>
-			<i class="fas fa-sync"></i> Actualizar usuario
+<h4>
+			<i class="fas fa-trash-alt"></i> Usuario a eliminar
 		</h4>
-
-<br>
+		<br>
 			<form id="form1">
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Cédula</span> <input
 						type="text" class="form-control"
-						placeholder="Inserte cedula aqui..."
+						placeholder="Ingresar número de cédula"
 						aria-describedby="basic-addon1" required id="cedula_usuario">
 				</div>
 
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon2">Email</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte email aquí..."
-						aria-describedby="basic-addon2" required id="email_usuario">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon3">Nombre completo</span>
-					<input type="text" class="form-control"
-						placeholder="Inserte nombre aquí..."
-						aria-describedby="basic-addon3" required id="nombre_usuario">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon4">Username</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte username aquí..."
-						aria-describedby="basic-addon4" required id="user">
-				</div>
-
-				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon5">Password</span> <input
-						type="text" class="form-control"
-						placeholder="Inserte password aquí..."
-						aria-describedby="basic-addon5" required id="password">
-				</div>
 			</form>
-			<button type="button" class="btn btn-success" onclick="actualizar()">
-				<i class="fas fa-check"></i> Actualizar
-			</button>
 
+			<button type="button" class="btn btn-danger" onclick="eliminar()">
+				<i class="fas fa-trash-alt"></i> Eliminar usuario
+			</button>
 		</div>
 
 	</div>
 	
-	<br>
-				<div id="error" class="alert alert-danger visually-hidden"
-				role="alert">Error al actualizar el usuario, verifique que la cedula y usuario dados sean validos</div>
-
+<br>
+<div id="error" class="alert alert-danger visually-hidden"
+					role="alert"><i class="fas fa-times"></i>  Error al eliminar el usuario, verifique que exista la cédula ingresada</div>
+					
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Usuario actualizado con exito</div>
-				
-		</center>		
+				role="alert"><i class="fas fa-check-square"></i>  Usuario eliminado con éxito</div>
+		<div style="padding-left: 5px;">		
+	</div>
+	</center>
+	
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
 		<div class="row justify-content-between">
 				<a class="navbar-brand links" href="#">&copy; 2021 Tienda Virtual Grupo 53 Equipo 3 </a>
@@ -146,8 +123,7 @@
 		</div>
 	</nav>
 	<script>
-		function actualizar() {
-			var x = document.getElementById("user").value;
+		function eliminar() {
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
@@ -157,55 +133,41 @@
 			if (req.status == 200)
 				usuarios = JSON.parse(req.responseText);
 			console.log(JSON.parse(req.responseText));
+
 			for (i = 0; i < usuarios.length; i++) {
-				console.log(usuarios[i].usuario);
+				
 				console.log(usuarios[i].cedula_usuario);
-				if (usuarios[i].usuario === x) {
-					console.log(usuarios[i].usuario + " " + x);
-					coincidencia = true
-					break;
-				}
-				if (usuarios[i].cedula_usuario === y) {
+				if (usuarios[i].cedula_usuario == y) {
 					console.log(usuarios[i].cedula_usuario + " " + y);
 					coincidencia = true
 					break;
 				}
 			}
 			console.log(coincidencia);
+
 			if (coincidencia != false) {
-				var formData = new FormData();
-				formData.append("cedula_usuario", document
-						.getElementById("cedula_usuario").value);
-				formData.append("email_usuario", document
-						.getElementById("email_usuario").value);
-				formData.append("nombre_usuario", document
-						.getElementById("nombre_usuario").value);
-				formData.append("password",
-						document.getElementById("password").value);
-				formData.append("usuario",
-						document.getElementById("user").value);
+				var cedula=document.getElementById("cedula_usuario").value;
+				
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", "http://localhost:8080/actualizarusuarios");
+				xhr.open("DELETE", "http://localhost:8080/eliminarusuario?cedula_usuario="+cedula);
+				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
+				
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
+
 				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
-				xhr.send(formData);
+				xhr.send();
+
 			} else {
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
+				
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
-				document.getElementById("cedula_usuario").value = "";
-				document.getElementById("email_usuario").value = "";
-				document.getElementById("nombre_usuario").value = "";
-				document.getElementById("password").value = "";
-				document.getElementById("user").value = "";
+				
+				document.getElementById("cedula_usuario").value = "";;
 			}
 		}
 	</script>

@@ -42,9 +42,9 @@
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
-				class="fas fa-address-book"></i> Clientes
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+				class="fas fa-address-book"></i> Clientes
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
@@ -55,41 +55,38 @@
 			</a>
 		</div>
 	</nav>
-		<center><h1 class= "titulomodulo"> </i> Modulo agregar usuario</h1></center>
-<br>
+		<center><h1 class= "titulomoduloinsertar"> </i> Módulo agregar usuario</h1></center>
+
+
 	<br>
-	
+	<br>
 	<center>
-<div style="padding-left: 5px;">
-	<div class="badge bg-primary text-wrap" style="width: 15rem;" ><i class="fas fa-cogs"></i> Funciones
+
+	<div class="badge bg-primary text-wrap" style="width: 60rem;" ><i class="fas fa-cogs"></i> Funciones
 </div>
-<br>
 <section>
-<br>
 <div class="nuevo">
-<div class="btn-group-vertical">
-  <a href="listausuarios.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #006666" aria-current="page"><i class="fas fa-plus-circle"></i> Lista de usuarios</a>
-  <a href="eliminarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar usuario</a>
-  <a href="actualizarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar usuario</a>
-  <a href="buscarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #333333" aria-current="page"><i class="fas fa-search"></i> Buscar usuario</a>
+<div class="btn-group">
+  <a href="listausuarios.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-table"></i> Ver usuarios</a>
+  <a href="actualizarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar usuarios</a>
+  <a href="buscarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-search"></i> Buscar usuarios</a>
+  <a href="eliminarusuario.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-trash"></i> Eliminar usuario</a>
 </div>
 
 </div>
-</center>
+
 </section>
+	<br>
+	<br>
 <center>
 	<div style="padding-left: 5px">
-		<h1>
-			<i class="fas fa-plus-circle"></i> Datos del nuevo usuario
-		</h1>
-		<div class="containerInsertarUsuario">
-		
-			<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Error al crear el usuario, verifique que no exista un usuario con la cédula y usuario ingresados</div>
-					
-			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Usuario creado con éxito</div>
 
+		<div class="containerInsertarUsuario">
+		<h4>
+			<i class="fas fa-plus-circle"></i> Datos del nuevo usuario
+		</h4>
+
+	<br>
 			<form id="form1">
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Cédula</span> <input
@@ -139,6 +136,12 @@
 		</div>
 
 	</div>
+		<br>
+				<div id="error" class="alert alert-danger visually-hidden"			
+					role="alert">Error al crear el usuario, verifique que no exista un usuario con la cédula y usuario ingresados</div>
+					
+			<div id="correcto" class="alert alert-success visually-hidden"
+				role="alert">Usuario creado con éxito</div>
 	</center>
 	
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
@@ -198,6 +201,7 @@
 				document.getElementById("password").value = "";
 				document.getElementById("user").value = "";
 	 			xhr.send(formData);
+
 			}else{
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");

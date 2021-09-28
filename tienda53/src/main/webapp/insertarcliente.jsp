@@ -58,42 +58,41 @@
 			</a>
 		</div>
 	</nav>
-		<center><h1 class= "titulomodulo"> </i> Modulo agregar clientes</h1></center>
-	<br>
-	<br>	
+		<center><h1 class= "titulomoduloinsertar"> </i> Módulo agregar clientes</h1></center>
+		<br>
+		<br>
+
 	<center>
-<div style="padding-left: 5px;">
-	<div class="badge bg-primary text-wrap" style="width: 15rem;" ><i class="fas fa-cogs"></i> Funciones
+
+	<div class="badge bg-primary text-wrap" style="width: 60rem;" ><i class="fas fa-cogs"></i> Funciones
 </div>
-<br>
 <section>
-<br>
 <div class="nuevo">
-<div class="btn-group-vertical">
-  <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #006666" aria-current="page"><i class="fas fa-plus-circle"></i> Lista de clientes</a>
-  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #990000" aria-current="page"><i class="fas fa-trash"></i> Eliminar cliente</a>
-  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #000099" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar cliente</a>
-  <a href="#" class="btn btn-primary active" style="width: 15rem; background-color: #333333" aria-current="page"><i class="fas fa-search"></i> Buscar cliente</a>
+<div class="btn-group">
+  <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-table"></i> Ver cliente</a>
+  <a href="actualizarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar cliente</a>
+  <a href="buscarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-search"></i> Buscar cliente</a>
+  <a href="eliminarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-trash"></i> Eliminar cliente</a>
 </div>
 
 </div>
-</center>
+
 </section>
-<center>		
+	<br>
+	<br>
+<center>
+<br>
+<br>	
 <br>
 	<div style="padding-left: 5px">
-		<h1>
-			<i class="fas fa-plus-circle"></i> Datos del nuevo cliente
-		</h1>
 		<div class="containerInsertarUsuario">
 		
 		
-			<div id="error" class="alert alert-danger visually-hidden"
-					role="alert">Error al crear el cliente, verifique que no exista un usuario con la cédula ingresada</div>
-					
-			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert">Cliente creado con éxito</div>
 
+<h3>
+			<i class="fas fa-plus-circle"></i> Datos del nuevo cliente
+		</h3>
+		<br>
 			<form id="form1">
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">Cédula</span> <input
@@ -141,8 +140,16 @@
 			</button>
 
 		</div>
-
+<br>
 	</div>
+	<center>
+				<div id="error" class="alert alert-danger visually-hidden"
+					role="alert">Error al crear el cliente, verifique que no exista un usuario con la cédula ingresada</div>
+					
+			<div id="correcto" class="alert alert-success visually-hidden"
+				role="alert">Cliente creado con éxito</div>
+				
+				</center>
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
 		<div class="row justify-content-between">
 				<a class="navbar-brand links" href="#">&copy; 2021 Tienda Virtual Grupo 53 Equipo 3 </a>
@@ -194,6 +201,7 @@
 				document.getElementById("nombre_cliente").value = "";
 				document.getElementById("telefono_cliente").value = "";
 	 			xhr.send(formData);
+
 			}else{
 				var element = document.getElementById("error");
 				element.classList.remove("visually-hidden");
