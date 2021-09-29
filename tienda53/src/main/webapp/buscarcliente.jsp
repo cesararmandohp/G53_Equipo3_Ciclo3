@@ -92,7 +92,7 @@
 
 			<form id="form1">
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon4">Cédula del usuario a buscar</span> <input
+					<span class="input-group-text" id="basic-addon4">Cédula del cliente a buscar</span> <input
 						type="text" class="form-control"
 						placeholder="Ingrese número de cédula del cliente..."
 						aria-describedby="basic-addon4" required id="cedula" >

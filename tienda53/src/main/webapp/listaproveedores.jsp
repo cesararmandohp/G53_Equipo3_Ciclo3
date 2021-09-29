@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Lista de clientes</title>
+<title>Lista de proveedores</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -29,31 +29,31 @@
 
 
 <script>
-	var baseurl = "http://localhost:8080/listarclientes";
-	function loadclientes() {
+	var baseurl = "http://localhost:8080/listarproveedores";
+	function loadproveedores() {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", baseurl, true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-				var clientes = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Dirección</th><th>Email</th><th>Nombre</th><th>Teléfono</th></tr>";
+				var proveedores = JSON.parse(xmlhttp.responseText);
+				var tbltop = "<table class='table table-dark table-striped'><tr><th>NIT</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Ciudad</th></tr>";
 				var main = "";
-				for (i = 0; i < clientes.length; i++) {
-					main += "<tr><td>" + clientes[i].cedula_cliente
-					+ "</td><td>" + clientes[i].direccion_cliente
-					+ "</td><td>" + clientes[i].email_cliente
-					+ "</td><td>" + clientes[i].nombre_cliente + "</td><td>"
-					+ clientes[i].telefono_cliente + "</td></tr>";
-		}
-		var tblbottom = "</table>";
-		var tbl = tbltop + main + tblbottom;
-		document.getElementById("clientesinfo").innerHTML = tbl;
+				for (i = 0; i < proveedores.length; i++) {
+					main += "<tr><td>" + proveedores[i].nit_proveedor
+							+ "</td><td>" + proveedores[i].nombre_proveedor
+							+ "</td><td>" + proveedores[i].direccion_proveedor
+							+ "</td><td>" + proveedores[i].telefono_proveedor + "</td><td>"
+							+ proveedores[i].ciudad_proveedor + "</td></tr>";
+				}
+				var tblbottom = "</table>";
+				var tbl = tbltop + main + tblbottom;
+				document.getElementById("proveedoresinfo").innerHTML = tbl;
+			}
+		};
+		xmlhttp.send();
 	}
-};
-xmlhttp.send();
-}
-window.onload = function() {
-loadclientes();
+	window.onload = function() {
+		loadproveedores();
 	}
 </script>
 
@@ -85,7 +85,7 @@ loadclientes();
 			<i class="fas fa-clipboard-list"></i> Reportes</a>
 		</div>
 	</nav>
-	<center><h1 class= "titulomoduloLista"> </i> Módulo lista de clientes</h1></center>
+	<center><h1 class= "titulomoduloLista"> </i> Módulo lista de proveedores</h1></center>
 	<br>
 	<br>
 	<center>
@@ -95,10 +95,10 @@ loadclientes();
 <section>
 <div class="nuevo">
 <div class="btn-group">
-  <a href="insertarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar cliente</a>
-  <a href="actualizarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar cliente</a>
-  <a href="buscarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-search"></i> Buscar cliente</a>
-  <a href="eliminarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-trash"></i> Eliminar cliente</a>
+  <a href="insertarproveedor.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar proveedor</a>
+  <a href="actualizarproveedor.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar proveedor</a>
+  <a href="buscarproveedor.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-search"></i> Buscar proveedor</a>
+  <a href="eliminarproveedor.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-trash"></i> Eliminar proveedor</a>
 </div>
 
 </div>
@@ -107,28 +107,28 @@ loadclientes();
 	<br>
 	<br>
 	<!-- contenido  -->
-	
 	<div style="padding-left: 5px;">
+	<div class="badge bg-primary text-wrap" style="width: 60rem;" ><i class="fas fa-list-ol"></i> Tabla de proveedores
+</div>
+</center>
+</center>
+
 	<br>
-	<br>
-	<div style="padding-left: 5px;">
-	<div class="badge bg-primary text-wrap" style="width: 60rem;" ><i class="fas fa-list-ol"></i> Tabla de clientes</div>
-	<br>
-	<br>
-			<div class="container">
+				<div class="container2">
 				<div class="row">
 					<!--  Aqui es donde se autogenera la tabla basado en el script -->
-					<div class="col align-self-center" id="clientesinfo">
+					<div class="col align-self-center" id="proveedoresinfo">
 					
 					</div>
 	
 				</div>
 			</div>
-	
-	</div>
-
+	<br>
+	<br>
+	<br>
 
 	<nav class="navbar fixed-bottom navbar-dark bg-dark">
+		<div class="row justify-content-between">
 				<a class="navbar-brand links" href="#">
 					&copy; 2021 Tienda Virtual Grupo 53 Equipo 3 </a>
 			</div>
