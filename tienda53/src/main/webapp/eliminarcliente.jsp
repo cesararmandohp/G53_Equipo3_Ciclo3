@@ -45,9 +45,9 @@
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
