@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Eliminar cliente</title>
+<title>Eliminar Proveedor</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -45,7 +45,7 @@
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
 			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
@@ -58,7 +58,7 @@
 			</a>
 		</div>
 	</nav>
-		<center><h1 class= "titulomoduloEliminar"> </i> Módulo eliminar cliente</h1></center>
+		<center><h1 class= "titulomoduloEliminar"> </i> Módulo eliminar proveedor</h1></center>
 		<br>
 		<br>
 	<center>
@@ -68,10 +68,10 @@
 <section>
 <div class="nuevo">
 <div class="btn-group">
-  <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-table"></i> Lista de clientes</a>
-  <a href="insertarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar clientes</a>
-  <a href="actualizarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar cliente</a>
-  <a href="buscarcliente.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-search"></i> Buscar clientes</a>
+  <a href="listaproveedores.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-table"></i> Lista de proveedores</a>
+  <a href="insertarproveedor.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-plus-circle"></i> Agregar proveedores</a>
+  <a href="actualizarproveedor.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-pen-alt"></i> Actualizar proveedores</a>
+  <a href="buscarproveedor.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-search"></i> Buscar proveedores</a>
 </div>
 
 </div>
@@ -86,21 +86,21 @@
 <div class="containerEliminarUsuario">
 
 <h4>
-			<i class="fas fa-trash-alt"></i> Cliente a eliminar
+			<i class="fas fa-trash-alt"></i> Proveedor a eliminar
 		</h4>
 		<br>
 			<form id="form1">
 				<div class="input-group mb-3">
-					<span class="input-group-text" id="basic-addon1">Cédula</span> <input
+					<span class="input-group-text" id="basic-addon1">NIT</span> <input
 						type="text" class="form-control"
 						placeholder="Ingresar número de cédula"
-						aria-describedby="basic-addon1" required id="cedula_cliente">
+						aria-describedby="basic-addon1" required id="nitproveedor">
 				</div>
 
 			</form>
 
 			<button type="button" class="btn btn-danger" onclick="eliminar()">
-				<i class="fas fa-trash-alt"></i> Eliminar cliente
+				<i class="fas fa-trash-alt"></i> Eliminar proveedor
 			</button>
 		</div>
 
@@ -108,10 +108,10 @@
 	
 <br>
 <div id="error" class="alert alert-danger visually-hidden"
-					role="alert"><i class="fas fa-times"></i>  Error al eliminar cliente, verifique que exista la cédula ingresada</div>
+					role="alert"><i class="fas fa-times"></i>  Error al eliminar proveedor, verifique que exista la cédula ingresada</div>
 					
 			<div id="correcto" class="alert alert-success visually-hidden"
-				role="alert"><i class="fas fa-check-square"></i>  Cliente eliminado con éxito</div>
+				role="alert"><i class="fas fa-check-square"></i>  Proveedor eliminado con éxito</div>
 		<div style="padding-left: 5px;">		
 	</div>
 	</center>	
@@ -124,10 +124,10 @@
 	</nav>
 	<script>
 		function eliminar() {
-			var y = document.getElementById("cedula_cliente").value;
+			var y = document.getElementById("nitproveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarclientes', false);
+			req.open('GET', 'http://localhost:8080/listarproveedores', false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -136,9 +136,9 @@
 
 			for (i = 0; i < usuarios.length; i++) {
 				
-				console.log(usuarios[i].cedula_cliente);
-				if (usuarios[i].cedula_cliente == y) {
-					console.log(usuarios[i].cedula_cliente + " " + y);
+				console.log(usuarios[i].nitproveedor);
+				if (usuarios[i].nit_proveedor == y) {
+					console.log(usuarios[i].nit_proveedor + " " + y);
 					coincidencia = true
 					break;
 				}
@@ -146,10 +146,10 @@
 			console.log(coincidencia);
 
 			if (coincidencia != false) {
-				var cedula=document.getElementById("cedula_cliente").value;
+				var cedula=document.getElementById("nitproveedor").value;
 				
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", "http://localhost:8080/eliminarcliente?cedula_cliente="+cedula);
+				xhr.open("DELETE", "http://localhost:8080/eliminarproveedor?nit="+cedula);
 				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
@@ -157,7 +157,7 @@
 				var element2 = document.getElementById("correcto");
 				element2.classList.remove("visually-hidden");
 
-				document.getElementById("cedula_cliente").value = "";
+				document.getElementById("nitproveedor").value = "";
 				xhr.send();
 
 			} else {
@@ -167,7 +167,7 @@
 				var element2 = document.getElementById("correcto");
 				element2.classList.add("visually-hidden");
 				
-				document.getElementById("cedula_cliente").value = "";;
+				document.getElementById("nitproveedor").value = "";;
 			}
 		}
 	</script>
