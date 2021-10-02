@@ -93,7 +93,7 @@
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">NIT</span> <input
 						type="text" class="form-control"
-						placeholder="Ingresar número de cédula"
+						placeholder="Ingresar número de NIT"
 						aria-describedby="basic-addon1" required id="nitproveedor">
 				</div>
 
@@ -108,7 +108,7 @@
 	
 <br>
 <div id="error" class="alert alert-danger visually-hidden"
-					role="alert"><i class="fas fa-times"></i>  Error al eliminar proveedor, verifique que exista la cédula ingresada</div>
+					role="alert"><i class="fas fa-times"></i>  Error al eliminar proveedor, verifique que exista el NIT ingresado</div>
 					
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert"><i class="fas fa-check-square"></i>  Proveedor eliminado con éxito</div>
