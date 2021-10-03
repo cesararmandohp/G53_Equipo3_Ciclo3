@@ -109,8 +109,7 @@
 		<br>
 <form id="form1">
 				<div>
-					<label for="formFileLg" class="form-label">Seleccionar
-						archivo CSV con el inventario de productos</label> <input
+					<label for="formFileLg" class="form-label">Seleccione el archivo CSV con el inventario de productos</label> <input
 						class="form-control" id="archivo" type="file"
 						accept=".csv">
 						<br>
