@@ -47,4 +47,11 @@ public class VentaController {
 	}
 	
 	
+	@GetMapping("/contadorventa")
+	public Integer contadorVentas() {
+		VentaDAO Dao = new VentaDAO();
+		return Dao.contadorVentas();
+	}
+	
+	
 }
