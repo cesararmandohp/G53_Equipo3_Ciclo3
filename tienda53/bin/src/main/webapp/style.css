@@ -235,12 +235,10 @@ background-attachment: fixed;}
 }
 .alert-success {
 	width: 500px;
-  	height: 30px;
+  	height: 70px;
     color: #0f5132;
     background-color: #d1e7dd;
     border-color: #badbcc;
-    background-size: cover;
-background-attachment: fixed;	
 }
 .cajonbuscar{
 	    display: flex;
@@ -387,48 +385,3 @@ border-bottom-left-radius: 20px;
 transition: 0,5s all;
 background-size: cover;
 background-attachment: fixed;}
-
- .containerRegistroVentas{
-  width: 900px;
-  height: 1000px;
-  background: #000000;
-  margin: center;
-  box-shadow: 7px 13px 37px #000;
-  padding: 20px 30px;
-  border-top: 15px solid #000066;
-  color: white;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
-transition: 0,5s all;
-background-size: cover;
-background-attachment: fixed;
-}
-
-.consecutivo{
-  width: 200px;
-  height: 200px;
-  background: #000000;
-  margin: rigth;
-  box-shadow: 7px 13px 37px #000;
-  padding: 50px 50px;
-  border-top: 15px solid #000066;
-  color: white;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
-transition: 0,5s all;
-background-size: cover;
-background-attachment: fixed;
-}
-
-
-.alert {
-    position: relative;
-    padding: 0rem 0rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;}
-    
