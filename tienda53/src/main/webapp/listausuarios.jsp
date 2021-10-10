@@ -29,13 +29,15 @@
 
 
 <script>
-	var getUrl = window.location;
-	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+	//var getUrl = window.location;
+	//var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 	
-	var baseurl = baseUrl+"http://localhost:8080/listarusuarios";
+	//var baseUrl = baseUrl+"/listarusuarios";
 	function loadusuarios() {
+		var getUrl = window.location;
+		var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseurl, true);
+		xmlhttp.open("GET", baseUrl+"/listarusuarios", true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				var usuarios = JSON.parse(xmlhttp.responseText);

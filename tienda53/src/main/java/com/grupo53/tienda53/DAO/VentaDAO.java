@@ -152,7 +152,7 @@ public class VentaDAO {
 						+ "SET ivaventa = "+venta.getIvaventa()+","
 						+ "total_venta = "+venta.getTotal_venta()+","
 						+ "valor_venta = "+venta.getValor_venta()+" "
-						+ "WHERE codigo_venta = "+venta.getCedula_usuario()+";";
+						+ "WHERE codigo_venta = "+venta.getCodigo_venta()+";";
 				
 				//ejecuta la sentencia 
 				estatuto.executeUpdate(sentencia);
