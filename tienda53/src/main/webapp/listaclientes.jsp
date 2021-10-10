@@ -29,7 +29,10 @@
 
 
 <script>
-	var baseurl = "http://localhost:8080/listarclientes";
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+	
+	var baseurl = baseUrl+"/listarclientes";
 	function loadclientes() {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", baseurl, true);
@@ -77,7 +80,7 @@ loadclientes();
 			<i class="fas fa-address-book"></i> Clientes</a>
 			<a class="navbar-brand links" href="listaproveedores.jsp">
 			<i class="fas fa-truck"></i> Proveedores</a>
-			<a class="navbar-brand links" href="listausuarios.jsp">
+			<a class="navbar-brand links" href="insertarproducto.jsp">
 			<i class="fas fa-apple-alt"></i> Productos</a>
 			<a class="navbar-brand links" href="listausuarios.jsp">
 			<i class="fas fa-money-check-alt"></i> Ventas</a>

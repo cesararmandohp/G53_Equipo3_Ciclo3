@@ -49,7 +49,7 @@
 				class="fas fa-address-book"></i> Clientes
 			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
@@ -93,7 +93,7 @@
 				<div class="input-group mb-3">
 					<span class="input-group-text" id="basic-addon1">NIT</span> <input
 						type="text" class="form-control"
-						placeholder="Ingresar número de cédula"
+						placeholder="Ingresar número de NIT"
 						aria-describedby="basic-addon1" required id="nitproveedor">
 				</div>
 
@@ -108,7 +108,7 @@
 	
 <br>
 <div id="error" class="alert alert-danger visually-hidden"
-					role="alert"><i class="fas fa-times"></i>  Error al eliminar proveedor, verifique que exista la cédula ingresada</div>
+					role="alert"><i class="fas fa-times"></i>  Error al eliminar proveedor, verifique que exista el NIT ingresado</div>
 					
 			<div id="correcto" class="alert alert-success visually-hidden"
 				role="alert"><i class="fas fa-check-square"></i>  Proveedor eliminado con éxito</div>
@@ -124,10 +124,13 @@
 	</nav>
 	<script>
 		function eliminar() {
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+			
 			var y = document.getElementById("nitproveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarproveedores', false);
+			req.open('GET', baseUrl+'/listarproveedores', false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -149,7 +152,7 @@
 				var cedula=document.getElementById("nitproveedor").value;
 				
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", "http://localhost:8080/eliminarproveedor?nit="+cedula);
+				xhr.open("DELETE", baseUrl+"/eliminarproveedor?nit="+cedula);
 				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

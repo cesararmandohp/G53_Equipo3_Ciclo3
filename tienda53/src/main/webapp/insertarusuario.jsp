@@ -44,9 +44,9 @@
 				class="fas fa-users"></i> Usuarios
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
-			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
 			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
@@ -152,11 +152,14 @@
 	</nav>
 	<script>
 		function enviar() {
+			var getUrl = window.location;
+			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+			
 			var x = document.getElementById("user").value;
 			var y = document.getElementById("cedula_usuario").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarusuarios', false);
+			req.open('GET', baseUrl+'/listarusuarios', false);
 			req.send(null);
 			var usuarios=null;
 			if (req.status == 200)
@@ -188,7 +191,7 @@
 	 			formData.append("password",document.getElementById("password").value);
 	 			formData.append("usuario",document.getElementById("user").value);
 	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", "http://localhost:8080/registrarusuario");
+	 			xhr.open("POST", baseUrl+"/registrarusuario");
 	 			
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
