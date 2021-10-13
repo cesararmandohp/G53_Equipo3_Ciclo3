@@ -152,7 +152,7 @@ public class VentaDAO {
 						+ "SET ivaventa = "+venta.getIvaventa()+","
 						+ "total_venta = "+venta.getTotal_venta()+","
 						+ "valor_venta = "+venta.getValor_venta()+" "
-						+ "WHERE codigo_venta = "+venta.getCedula_usuario()+";";
+						+ "WHERE codigo_venta = "+venta.getCodigo_venta()+";";
 				
 				//ejecuta la sentencia 
 				estatuto.executeUpdate(sentencia);
@@ -189,14 +189,15 @@ public class VentaDAO {
 
 			try {
 				//prepare la sentencia en la base de datos
-				PreparedStatement consulta = conex.getConnection().prepareStatement("select COUNT(*) FROM ventas");
-				
+				//PreparedStatement consulta = conex.getConnection().prepareStatement("select COUNT(*) FROM ventas");
+				PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT codigo_venta FROM ventas ORDER BY codigo_venta DESC LIMIT 1");
 				//ejecute la sentencia
 				ResultSet res = consulta.executeQuery();
 				
 				//cree un objeto para cada encontrado en la base de datos basado en la clase entidad con los datos encontrados
 				while (res.next()) {
-					contador=(res.getInt("COUNT(*)"))+1;
+					//contador=(res.getInt("COUNT(*)"))+1;
+					contador=(res.getInt("codigo_venta"))+1;
 									}
 				
 				//cerrar resultado, sentencia y conexión
