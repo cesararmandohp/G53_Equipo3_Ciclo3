@@ -132,7 +132,7 @@
 			<span class="input-group-text" id="basic-addon4">Cantidad de productos</span> <input
 			type="number" class="form-control"
 			placeholder="Ingrese cantidad"
-			aria-describedby="basic-addon4" required id="cantidad" >
+			aria-describedby="basic-addon4" required id="cantidad_1" >
 			
 			<button type="button" class="btn btn-success" onclick="enviar2()">
 				<i class="fas fa-check"></i> Consultar
@@ -232,8 +232,11 @@
 	</div>
 	
 	<br>
-	<button type="button" class="btn btn-success" onclick="contador(); calcular();registrar_venta()">
+	<button type="button" class="btn btn-success" onclick="registrar_todo()">
 				<i class="fas fa-receipt"></i> Registrar venta
+			</button>
+			<button type="button" class="btn btn-success" onclick="registrar_detalle()">
+				<i class="fas fa-receipt"></i> Registrar detalle
 			</button>		
 </div>
 	
@@ -319,7 +322,7 @@
 			usuario = JSON.parse(req.responseText);
 		console.log(JSON.parse(req.responseText));
 		
-		var cantidad= parseInt(document.getElementById("cantidad").value);
+		var cantidad= (document.getElementById("cantidad").value);
 
 		var element = document.getElementById("errorproducto");
 		element.classList.add("visually-hidden");
@@ -329,9 +332,8 @@
 		console.log(usuario.toString());
 		
 	if (usuario.toString()!=""){
-
 		document.getElementById("nombre_producto").value = usuario[0].nombre_producto;
-		document.getElementById("precio_venta").value = usuario[0].precio_venta*cantidad
+		document.getElementById("precio_venta").value = usuario[0].precio_venta;
 		document.getElementById("usersearch").value = "";
 	
 
@@ -503,7 +505,35 @@
 		
 	}
 	
+	function registrar_detalle() {
+
+		var formData = new FormData();
+		formData.append("cantidad_producto", document
+				.getElementById("cantidad_1").value);
+		formData.append("codigo_producto", document
+				.getElementById("code").value);
+		formData.append("codigo_venta", document
+				.getElementById("consecutivo").value);
+		formData.append("valoriva", document
+				.getElementById("total_iva").value);
+		formData.append("valor_total", document
+				.getElementById("total_venta").value);
+		formData.append("valor_venta", document
+				.getElementById("totalconiva").value);
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "http://localhost:8080/registrardetalleventa");
+		xhr.send(formData);
+
+	}	
 	
+	
+	function registrar_todo(){
+		contador();
+		calcular();
+		registrar_venta();
+		registrar_detalle();
+		
+	}
 
 </script>
 
