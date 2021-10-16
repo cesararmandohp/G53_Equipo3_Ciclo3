@@ -48,9 +48,9 @@
 				class="fas fa-truck"></i> Proveedores
 			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="ventas.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="reportes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
@@ -147,13 +147,10 @@
 	</center>
 	<script>
 		function actualizar() {
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-			
 			var x = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl+'/listarproveedores', false);
+			req.open('GET', 'http://localhost:8080/listarproveedores', false);
 			req.send(null);
 			var proveedor = null;
 			if (req.status == 200)
@@ -181,7 +178,7 @@
 				formData.append("telefono_proveedor",
 						document.getElementById("telefono_proveedor").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", baseUrl+"/actualizarproveedor");
+				xhr.open("PUT", "http://localhost:8080/actualizarproveedor");
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");

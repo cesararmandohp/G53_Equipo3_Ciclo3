@@ -28,10 +28,7 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 
 <script>
-	var getUrl = window.location;
-	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-	
-	var baseurl = baseUrl+"/listarproductos";
+	var baseurl = "http://localhost:8080/listarproductos";
 	function loadproductos() {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", baseurl, true);
@@ -79,15 +76,15 @@
 		<div class="container">
 			<a class="navbar-brand links" href="listausuarios.jsp"> <i
 				class="fas fa-users"></i> Usuarios
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
 				class="fas fa-address-book"></i> Clientes
 			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
 				class="fas fa-truck"></i> Proveedores
 			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="ventas.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="reportes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
@@ -112,8 +109,7 @@
 		<br>
 <form id="form1">
 				<div>
-					<label for="formFileLg" class="form-label">Seleccionar
-						archivo CSV con el inventario de productos</label> <input
+					<label for="formFileLg" class="form-label">Seleccione el archivo CSV con el inventario de productos</label> <input
 						class="form-control" id="archivo" type="file"
 						accept=".csv">
 						<br>
@@ -169,11 +165,8 @@
 	</nav>
 
 	<script>
-	
 		function subirArchivo() {
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-			
+
 			try {
 
 				var csvFile = document.getElementById("archivo");
@@ -189,7 +182,7 @@
 
 					var xhr = new XMLHttpRequest();
 					xhr.open("DELETE",
-							baseUrl+"/eliminartodoproducto",true);
+							"http://localhost:8080/eliminartodoproducto",true);
 					xhr.send();
 
 					for (var i = 0; i < arrayLineas.length; i += 1) {
@@ -212,7 +205,7 @@
 						formData.append("precio_venta", arraydatos[5]);
 						var xhr = new XMLHttpRequest();
 						xhr.open("POST",
-								baseUrl+"/registrarproducto");
+								"http://localhost:8080/registrarproducto");
 
 						xhr.send(formData);
 					}

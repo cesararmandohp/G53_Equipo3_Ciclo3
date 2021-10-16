@@ -51,9 +51,9 @@
 				class="fas fa-truck"></i> Proveedores
 			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="ventas.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="reportes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
@@ -157,13 +157,11 @@
 	</nav>
 	<script>
 		function enviar() {
-			var getUrl = window.location;
-			var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-			
+				
 			var y = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', baseUrl+'/listarproveedores', false);
+			req.open('GET', 'http://localhost:8080/listarproveedores', false);
 			req.send(null);
 			var proveedores=null;
 			if (req.status == 200)
@@ -189,7 +187,7 @@
 	 			formData.append("nombre_proveedor",document.getElementById("nombre_proveedor").value);
 	 			formData.append("telefono_proveedor",document.getElementById("telefono_proveedor").value);
 	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", baseUrl+"/registrarproveedor");
+	 			xhr.open("POST", "http://localhost:8080/registrarproveedor");
 	 			
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

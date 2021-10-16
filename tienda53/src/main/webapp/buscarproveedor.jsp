@@ -48,9 +48,9 @@
 				class="fas fa-truck"></i> Proveedores
 			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="ventas.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
-			</a> <a class="navbar-brand links" href="listausuarios.jsp"> <i
+			</a> <a class="navbar-brand links" href="reportes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
 			</a>
 		</div>
@@ -149,13 +149,12 @@
 	</nav>
 	<script>
 	function enviar() {
-		var getUrl = window.location;
-		var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
 		
 		var req = new XMLHttpRequest();
 		var coincidencia = false;
 		var nit=   document.getElementById("nit").value;
-		req.open('GET', baseUrl+'/consultarproveedor?nit='+nit, false);
+		req.open('GET', 'http://localhost:8080/consultarproveedor?nit='+nit, false);
 		req.send(null);
 		var usuario = null;
 		if (req.status == 200)

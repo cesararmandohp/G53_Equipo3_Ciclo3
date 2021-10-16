@@ -23,7 +23,7 @@ public class DetalleVentaDAO {
 					+ detalle.getCodigo_producto() + "," 
 					+ detalle.getCodigo_venta()+ "," 
 					+ detalle.getValor_total() + ","
-				    + detalle.getValor_venta() + ""
+				    + detalle.getValor_venta() + ","
 				    + detalle.getValoriva() + ""				    
 					+ ");";
 			

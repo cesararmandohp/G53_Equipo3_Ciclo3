@@ -29,10 +29,7 @@
 
 
 <script>
-	var getUrl = window.location;
-	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-	
-	var baseurl = baseUrl+"/listarclientes";
+	var baseurl = "http://localhost:8080/listarclientes";
 	function loadclientes() {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", baseurl, true);
@@ -74,18 +71,19 @@ loadclientes();
 	<!-- Navbar modulos-->
 	<nav class="navbar navbar-dark bg-primary">
 		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp">
-			<i class="fas fa-users"></i> Usuarios</a> 
-			<a class="navbar-brand links" href="listaclientes.jsp">
-			<i class="fas fa-address-book"></i> Clientes</a>
-			<a class="navbar-brand links" href="listaproveedores.jsp">
-			<i class="fas fa-truck"></i> Proveedores</a>
-			<a class="navbar-brand links" href="insertarproducto.jsp">
-			<i class="fas fa-apple-alt"></i> Productos</a>
-			<a class="navbar-brand links" href="listausuarios.jsp">
-			<i class="fas fa-money-check-alt"></i> Ventas</a>
-			<a class="navbar-brand links" href="listausuarios.jsp">
-			<i class="fas fa-clipboard-list"></i> Reportes</a>
+			<a class="navbar-brand links" href="listausuarios.jsp"> <i
+				class="fas fa-users"></i> Usuarios
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+				class="fas fa-address-book"></i> Clientes
+			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
+				class="fas fa-truck"></i> Proveedores
+			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
+				class="fas fa-apple-alt"></i> Productos
+			</a> <a class="navbar-brand links" href="ventas.jsp"> <i
+				class="fas fa-money-check-alt"></i> Ventas
+			</a> <a class="navbar-brand links" href="reportes.jsp"> <i
+				class="fas fa-clipboard-list"></i> Reportes
+			</a>
 		</div>
 	</nav>
 	<center><h1 class= "titulomoduloLista"> </i> Módulo lista de clientes</h1></center>

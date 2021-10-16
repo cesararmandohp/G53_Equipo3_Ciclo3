@@ -29,15 +29,10 @@
 
 
 <script>
-	//var getUrl = window.location;
-	//var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-	
-	//var baseUrl = baseUrl+"/listarusuarios";
+	var baseurl = "http://localhost:8080/listarusuarios";
 	function loadusuarios() {
-		var getUrl = window.location;
-		var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseUrl+"/listarusuarios", true);
+		xmlhttp.open("GET", baseurl, true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				var usuarios = JSON.parse(xmlhttp.responseText);
@@ -76,18 +71,19 @@
 	<!-- Navbar modulos-->
 	<nav class="navbar navbar-dark bg-primary">
 		<div class="container">
-			<a class="navbar-brand links" href="listausuarios.jsp">
-			<i class="fas fa-users"></i> Usuarios</a> 
-			<a class="navbar-brand links" href="listaclientes.jsp">
-			<i class="fas fa-address-book"></i> Clientes</a>
-			<a class="navbar-brand links" href="listaproveedores.jsp">
-			<i class="fas fa-truck"></i> Proveedores</a>
-			<a class="navbar-brand links" href="insertarproducto.jsp">
-			<i class="fas fa-apple-alt"></i> Productos</a>
-			<a class="navbar-brand links" href="listausuarios.jsp">
-			<i class="fas fa-money-check-alt"></i> Ventas</a>
-			<a class="navbar-brand links" href="listausuarios.jsp">
-			<i class="fas fa-clipboard-list"></i> Reportes</a>
+			<a class="navbar-brand links" href="listausuarios.jsp"> <i
+				class="fas fa-users"></i> Usuarios
+			</a> <a class="navbar-brand links" href="listaclientes.jsp"> <i
+				class="fas fa-address-book"></i> Clientes
+			</a> <a class="navbar-brand links" href="listaproveedores.jsp"> <i
+				class="fas fa-truck"></i> Proveedores
+			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
+				class="fas fa-apple-alt"></i> Productos
+			</a> <a class="navbar-brand links" href="ventas.jsp"> <i
+				class="fas fa-money-check-alt"></i> Ventas
+			</a> <a class="navbar-brand links" href="reportes.jsp"> <i
+				class="fas fa-clipboard-list"></i> Reportes
+			</a>
 		</div>
 	</nav>
 	<center><h1 class= "titulomoduloLista"> </i> Módulo lista de usuarios</h1></center>
