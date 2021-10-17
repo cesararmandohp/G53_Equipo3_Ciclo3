@@ -390,7 +390,7 @@ background-attachment: fixed;}
 
  .containerRegistroVentas{
   width: 1000px;
-  height: 800px;
+  height: 700px;
   background: #000000;
   margin: center;
   box-shadow: 7px 13px 37px #000;
@@ -431,4 +431,24 @@ background-attachment: fixed;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;}
+    
+    
+    
+.containerRegistroReportes{
+  width: 1000px;
+  height:400px;
+  background: #000000;
+  margin: center;
+  box-shadow: 7px 13px 37px #000;
+  padding: 20px 30px;
+  border-top: 15px solid #000066;
+  color: white;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+transition: 0,5s all;
+background-size: cover;
+background-attachment: fixed;
+}
     
