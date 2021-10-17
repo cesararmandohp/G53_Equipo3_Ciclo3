@@ -19,4 +19,10 @@ public class DetalleClientesController {
 		return Dao.detalleDeClientes();
 	}
 	
+	@GetMapping("/sumatotalventas")
+	public Integer sumaTotalVentas() {
+		DetalleClientesDAO Dao = new DetalleClientesDAO();
+		return Dao.sumaTotalVentas();
+	}
+	
 }

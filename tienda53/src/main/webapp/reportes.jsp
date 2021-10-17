@@ -10,7 +10,7 @@
 <!-- Tamaño de la pantalla -->
 <meta name="viewport" content="width=device-width">
 <!-- titulo de la pestaña -->
-<title>Ventas</title>
+<title>Reportes</title>
 <!-- bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -84,68 +84,26 @@
 <div class="btn-group">
 <li>
  <ul> <a href="listausuarios.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-table"></i>  Listado de usuarios</a></ul>	
- <button type="button" class="btn btn-success" onclick="loadusuarios()" id="usuariosinfo"> Generar</button>
- <br>
+ 
  <br>
  <ul> <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-male"></i>  Listado de clientes</a></ul>
- <button type="button" class="btn btn-success" onclick="loadclientes()" id="clientesinfo"> Generar</button>
+ 
  <br>
  <br>
  <ul> <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-shopping-cart"></i>  Ventas por cliente</a></ul>
+ 
  
 </li>
 </div>
 
 <script>
-	var baseurl = "http://localhost:8080/listarclientes";
-	function loadclientes() {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseurl, true);
-		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-				var clientes = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Dirección</th><th>Email</th><th>Nombre</th><th>Teléfono</th></tr>";
-				var main = "";
-				for (i = 0; i < clientes.length; i++) {
-					main += "<tr><td>" + clientes[i].cedula_cliente
-					+ "</td><td>" + clientes[i].direccion_cliente
-					+ "</td><td>" + clientes[i].email_cliente
-					+ "</td><td>" + clientes[i].nombre_cliente + "</td><td>"
-					+ clientes[i].telefono_cliente + "</td></tr>";
-		}
-		var tblbottom = "</table>";
-		var tbl = tbltop + main + tblbottom;
-		document.getElementById("clientesinfo").innerHTML = tbl;
-	}
-};
-xmlhttp.send();
-}
+	
 
-	var baseUrl = "http://localhost:8080/listarusuarios";
-	function loadusuarios() {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseUrl, true);
-		xmlhttp.onreadystatechange = function() {
-			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-				var usuarios = JSON.parse(xmlhttp.responseText);
-				var tbltop = "<table class='table table-dark table-striped'><tr><th>Cedula</th><th>Email</th><th>Nombre</th><th>Password</th><th>Usuario</th></tr>";
-				var main = "";
-				for (i = 0; i < usuarios.length; i++) {
-					main += "<tr><td>" + usuarios[i].cedula_usuario
-							+ "</td><td>" + usuarios[i].email_usuario
-							+ "</td><td>" + usuarios[i].nombre_usuario
-							+ "</td><td>" + usuarios[i].password + "</td><td>"
-							+ usuarios[i].usuario + "</td></tr>";
-				}
-				var tblbottom = "</table>";
-				var tbl = tbltop + main + tblbottom;
-				document.getElementById("usuariosinfo").innerHTML = tbl;
-			}
-		};
-		xmlhttp.send();
-	}
+
+	
+	
 </script>
 
 
 </body>
-</html> tml>
+</html> 

@@ -56,5 +56,51 @@ public class DetalleClientesDAO {
 	}
 
 	
+	public int sumaTotalVentas() {
+		// lista que contendra el o los usuarios obtenidos
+		int sumvalor_venta = 0;
+
+		// instancia de la conexión
+		Conexion conex = new Conexion();
+
+		try {
+			// prepare la sentencia en la base de datos
+			PreparedStatement consulta = conex.getConnection()
+					.prepareStatement("SELECT SUM(valor_venta) as sumvalor_venta FROM ventas;");
+
+			// ejecute la sentencia
+			ResultSet res = consulta.executeQuery();
+
+			// cree un objeto para cada encontrado en la base de datos basado en la clase
+			// entidad con los datos encontrados
+			while (res.next()) {
+				sumvalor_venta = (res.getInt("sumvalor_venta"));
+			}
+
+			// cerrar resultado, sentencia y conexión
+			res.close();
+			consulta.close();
+			conex.desconectar();
+
+		} catch (SQLException e) {
+			// si hay un error en el sql mostrarlo
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo consultar la sumatoria de las ventas");
+			System.out.println(e.getMessage());
+			System.out.println(e.getErrorCode());
+		} catch (Exception e) {
+			// si hay cualquier otro error mostrarlo
+			System.out.println("------------------- ERROR --------------");
+			System.out.println("No se pudo consultar la sumatoria de las ventas");
+			System.out.println(e.getMessage());
+			System.out.println(e.getLocalizedMessage());
+		}
+
+		return sumvalor_venta;
+	}
+
+	
+	
+	
 
 }
