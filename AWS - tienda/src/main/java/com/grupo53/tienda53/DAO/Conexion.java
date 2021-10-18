@@ -10,16 +10,16 @@ import java.sql.*;
 
 public class Conexion {
 	/** Parametros de conexión locales*/
-	static String nombre_base_datos="tienda";
-	static String usuariobd	="root";
-	static String clavebd="mintic53";
-	static String url="jdbc:mysql://127.0.0.1:5005/"+nombre_base_datos;
+	//static String nombre_base_datos="tienda";
+	//static String usuariobd	="root";
+	//static String clavebd="mintic53";
+	//static String url="jdbc:mysql://127.0.0.1:5005/"+nombre_base_datos;
 	
 	/** Parametros de conexión nube*/
-	//static String nombre_base_datos="g53e3";
-   // static String usuariobd    ="admin";
-   // static String clavebd="minticroca";
-   // static String url="jdbc:mariadb://tiendasgenericasdr-g9-g38-53.czo3ixoe3xoe.us-east-1.rds.amazonaws.com/"+nombre_base_datos;
+	static String nombre_base_datos="g53e3";
+    static String usuariobd    ="admin";
+    static String clavebd="minticroca";
+    static String url="jdbc:mariadb://tiendasgenericasdr-g9-g38-53.czo3ixoe3xoe.us-east-1.rds.amazonaws.com/"+nombre_base_datos;
 
 	
 	//objeto sin inicializar de la conexión
