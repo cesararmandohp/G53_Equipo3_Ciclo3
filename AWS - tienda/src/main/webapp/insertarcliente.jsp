@@ -157,12 +157,17 @@
 		</div>
 	</nav>
 	<script>
-		function enviar() {
+
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+		
+	function enviar() {
 				
 			var y = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarclientes', false);
+			<!--req.open('GET', 'http://localhost:8080/listarclientes', false);-->
+			req.open('GET', baseUrl + '/listarclientes', false);
 			req.send(null);
 			var clientes=null;
 			if (req.status == 200)
@@ -188,7 +193,8 @@
 	 			formData.append("nombre_cliente",document.getElementById("nombre_cliente").value);
 	 			formData.append("telefono_cliente",document.getElementById("telefono_cliente").value);
 	 			var xhr = new XMLHttpRequest();
-	 			xhr.open("POST", "http://localhost:8080/registrarcliente");
+	 			<!--xhr.open("POST", "http://localhost:8080/registrarcliente");-->
+	 			xhr.open("POST", baseUrl + "/registrarcliente");
 	 			
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

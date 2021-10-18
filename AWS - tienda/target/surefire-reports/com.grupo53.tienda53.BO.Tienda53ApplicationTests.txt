@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.grupo53.tienda53.BO.Tienda53ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.004 s - in com.grupo53.tienda53.BO.Tienda53ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.134 s - in com.grupo53.tienda53.BO.Tienda53ApplicationTests

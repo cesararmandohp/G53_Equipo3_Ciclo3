@@ -29,10 +29,14 @@
 
 
 <script>
-var baseUrl = "http://localhost:8080/listardetalleclientes";
+<!--var baseUrl = "http://localhost:8080/listardetalleclientes";-->
+
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+
 function detalle_venta() {
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET", baseUrl, true);
+	xmlhttp.open("GET", baseUrl + "/listardetalleclientes" , true);
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 			var venta = JSON.parse(xmlhttp.responseText);
@@ -53,7 +57,8 @@ function detalle_venta() {
 
 function sumvalor_ventas() {
 	var req = new XMLHttpRequest();
-	req.open('GET', 'http://localhost:8080/sumatotalventas', false);
+	<!--req.open('GET', 'http://localhost:8080/sumatotalventas', false);-->
+	req.open('GET', baseUrl + '/sumatotalventas', false);
 	req.send(null);
 	var cont = null;
 	if (req.status == 200)

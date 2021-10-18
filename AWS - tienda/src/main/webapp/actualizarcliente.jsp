@@ -146,11 +146,15 @@
 	</nav>
 	</center>
 	<script>
-		function actualizar() {
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+		
+	function actualizar() {
 			var x = document.getElementById("cedula_cliente").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarclientes', false);
+			<!--req.open('GET', 'http://localhost:8080/listarclientes', false);-->
+			req.open('GET', baseUrl + '/listarclientes', false);
 			req.send(null);
 			var clientes = null;
 			if (req.status == 200)
@@ -178,7 +182,8 @@
 				formData.append("telefono_cliente",
 						document.getElementById("telefono_cliente").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", "http://localhost:8080/actualizarcliente");
+				<!--xhr.open("PUT", "http://localhost:8080/actualizarcliente");-->
+				xhr.open("PUT", baseUrl + "/actualizarcliente");
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");

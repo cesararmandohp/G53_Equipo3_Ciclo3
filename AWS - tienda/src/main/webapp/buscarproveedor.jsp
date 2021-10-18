@@ -148,13 +148,17 @@
 		</div>
 	</nav>
 	<script>
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+	
+	
 	function enviar() {
-
 		
 		var req = new XMLHttpRequest();
 		var coincidencia = false;
 		var nit=   document.getElementById("nit").value;
-		req.open('GET', 'http://localhost:8080/consultarproveedor?nit='+nit, false);
+		<!--req.open('GET', 'http://localhost:8080/consultarproveedor?nit='+nit, false);-->
+		req.open('GET', baseUrl + '/consultarproveedor?nit='+nit, false);
 		req.send(null);
 		var usuario = null;
 		if (req.status == 200)

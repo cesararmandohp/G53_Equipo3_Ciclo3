@@ -155,13 +155,19 @@
 		</div>
 	</nav>
 	<script>
+	
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+	
+	
 	function enviar() {
 
 		
 		var req = new XMLHttpRequest();
 		var coincidencia = false;
 		var cedula=   document.getElementById("cedula").value;
-		req.open('GET', 'http://localhost:8080/consultarcliente?cedula_cliente='+cedula, false);
+		<!--req.open('GET', 'http://localhost:8080/consultarcliente?cedula_cliente='+cedula, false);-->
+		req.open('GET', baseUrl + '/consultarcliente?cedula_cliente='+cedula, false);
 		req.send(null);
 		var usuario = null;
 		if (req.status == 200)

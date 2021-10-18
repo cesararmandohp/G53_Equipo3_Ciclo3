@@ -123,11 +123,16 @@
 		</div>
 	</nav>
 	<script>
-		function eliminar() {
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+	
+	
+	function eliminar() {
 			var y = document.getElementById("nitproveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarproveedores', false);
+			<!--req.open('GET', 'http://localhost:8080/listarproveedores', false);-->
+			req.open('GET', baseUrl + '/listarproveedores', false);
 			req.send(null);
 			var usuarios = null;
 			if (req.status == 200)
@@ -149,7 +154,7 @@
 				var cedula=document.getElementById("nitproveedor").value;
 				
 				var xhr = new XMLHttpRequest();
-				xhr.open("DELETE", "http://localhost:8080/eliminarproveedor?nit="+cedula);
+				xhr.open("DELETE", baseUrl + "/eliminarproveedor?nit="+cedula);
 				
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");

@@ -146,11 +146,15 @@
 	</nav>
 	</center>
 	<script>
-		function actualizar() {
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+		
+	function actualizar() {
 			var x = document.getElementById("nit_proveedor").value;
 			var req = new XMLHttpRequest();
 			var coincidencia = false;
-			req.open('GET', 'http://localhost:8080/listarproveedores', false);
+			<!--req.open('GET', 'http://localhost:8080/listarproveedores', false);-->
+			req.open('GET', baseUrl + '/listarproveedores', false);
 			req.send(null);
 			var proveedor = null;
 			if (req.status == 200)
@@ -178,7 +182,8 @@
 				formData.append("telefono_proveedor",
 						document.getElementById("telefono_proveedor").value);
 				var xhr = new XMLHttpRequest();
-				xhr.open("PUT", "http://localhost:8080/actualizarproveedor");
+				<!--xhr.open("PUT", "http://localhost:8080/actualizarproveedor");-->
+				xhr.open("PUT", baseUrl + "/actualizarproveedor");
 				var element = document.getElementById("error");
 				element.classList.add("visually-hidden");
 				var element2 = document.getElementById("correcto");

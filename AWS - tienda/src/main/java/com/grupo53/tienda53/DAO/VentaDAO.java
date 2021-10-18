@@ -191,7 +191,7 @@ public class VentaDAO {
 				// prepare la sentencia en la base de datos
 				PreparedStatement consulta = conex.getConnection()
 						.prepareStatement("SELECT `AUTO_INCREMENT` " + "FROM  INFORMATION_SCHEMA.TABLES "
-								+ "WHERE TABLE_SCHEMA = 'tienda' " + "AND   TABLE_NAME   = 'ventas';");
+								+ "WHERE TABLE_SCHEMA = 'g53e3' " + "AND TABLE_NAME= 'ventas';");
 
 				//PreparedStatement consulta = conex.getConnection().prepareStatement("select COUNT(*) FROM ventas;");
 				

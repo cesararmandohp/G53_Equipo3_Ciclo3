@@ -28,9 +28,14 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 
 <script>
-	window.onload = function() {
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+
+
+window.onload = function() {
 		var req = new XMLHttpRequest();
-		req.open('GET', 'http://localhost:8080/contadorventa', false);
+		<!--req.open('GET', 'http://localhost:8080/contadorventa', false);-->
+		req.open('GET', baseUrl + '/contadorventa', false);
 		req.send(null);
 		var cont = null;
 		if (req.status == 200)
@@ -344,12 +349,17 @@
 	</nav>
 	
 <script>
-	function traerNombreCliente() {
+
+var getUrl = window.location;
+var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+
+
+function traerNombreCliente() {
 		var client = document.getElementById("cedula_cliente").value;
 		var req = new XMLHttpRequest();
 		var coincidencia = false;
-		req.open('GET', 'http://localhost:8080/consultarcliente?cedula_cliente='
-				+ client, false);
+		<!--req.open('GET', 'http://localhost:8080/consultarcliente?cedula_cliente=' + client, false);-->
+		req.open('GET', baseUrl + '/consultarcliente?cedula_cliente=' + client, false);
 		req.send(null);
 		var cliente = null;
 		if (req.status == 200)
@@ -375,8 +385,8 @@
 		var user = document.getElementById("usuario").value;
 		var req = new XMLHttpRequest();
 		var coincidencia = false;
-		req.open('GET', 'http://localhost:8080/consultarusuario?usuario='
-				+ user, false);
+		<!--req.open('GET', 'http://localhost:8080/consultarusuario?usuario=' + user, false);-->
+		req.open('GET', baseUrl + '/consultarusuario?usuario=' + user, false);
 		req.send(null);
 		var usuario = null;
 		if (req.status == 200)
@@ -403,8 +413,8 @@
 		var prod1 = document.getElementById("codigo_producto1").value;
 		var req = new XMLHttpRequest();
 		var coincidencia = false;
-		req.open('GET', 'http://localhost:8080/consultarproducto?code='
-				+ prod1, false);
+		<!--req.open('GET', 'http://localhost:8080/consultarproducto?code='	+ prod1, false);-->
+		req.open('GET', baseUrl + '/consultarproducto?code=' + prod1, false);
 		req.send(null);
 		var producto1 = null;
 		if (req.status == 200)
@@ -434,8 +444,8 @@
 		var prod2 = document.getElementById("codigo_producto2").value;
 		var req = new XMLHttpRequest();
 		var coincidencia = false;
-		req.open('GET', 'http://localhost:8080/consultarproducto?code='
-				+ prod2, false);
+		<!--req.open('GET', 'http://localhost:8080/consultarproducto?code='	+ prod2, false);-->
+		req.open('GET', baseUrl + '/consultarproducto?code=' + prod2, false);
 		req.send(null);
 		var producto2 = null;
 		if (req.status == 200)
@@ -463,8 +473,8 @@
 		var prod3 = document.getElementById("codigo_producto3").value;
 		var req = new XMLHttpRequest();
 		var coincidencia = false;
-		req.open('GET', 'http://localhost:8080/consultarproducto?code='
-				+ prod3, false);
+		<!--req.open('GET', 'http://localhost:8080/consultarproducto?code='	+ prod3, false);-->
+		req.open('GET', baseUrl + '/consultarproducto?code=' + prod3, false);
 		req.send(null);
 		var producto3 = null;
 		if (req.status == 200)
@@ -557,7 +567,9 @@
 			formData.append("valor_venta", document
 					.getElementById("total_venta_iva").value);
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST", "http://localhost:8080/registrarventa");
+			<!--xhr.open("POST", "http://localhost:8080/registrarventa");-->
+			xhr.open("POST", baseUrl + "/registrarventa");
+			
 			xhr.send(formData);
 
 			setTimeout(
@@ -570,7 +582,7 @@
 								continue;
 							} else {
 								var formData2 = new FormData();
-								//formData2.append("codigo_detalle_venta", );
+								<!--formData2.append("codigo_detalle_venta", );-->
 								formData2.append("cantidad_producto",
 										document.getElementById("cant"
 												+ i.toString()).value);
@@ -600,9 +612,8 @@
 												document
 														.getElementById("total_venta_iva").value);
 								var xhr2 = new XMLHttpRequest();
-								xhr2
-										.open("POST",
-												"http://localhost:8080/registrardetalleventa");
+								<!--xhr2.open("POST", "http://localhost:8080/registrardetalleventa");-->
+								xhr2.open("POST", baseUrl + "/registrardetalleventa");
 								xhr2.send(formData2);
 							}
 
