@@ -51,7 +51,7 @@
 				class="fas fa-truck"></i> Proveedores
 			</a> <a class="navbar-brand links" href="insertarproducto.jsp"> <i
 				class="fas fa-apple-alt"></i> Productos
-			</a> <a class="navbar-brand links" href="ventas.jsp"> <i
+			</a> <a class="navbar-brand links" href="insertarventas.jsp"> <i
 				class="fas fa-money-check-alt"></i> Ventas
 			</a> <a class="navbar-brand links" href="reportes.jsp"> <i
 				class="fas fa-clipboard-list"></i> Reportes
@@ -66,44 +66,38 @@
 </section>	
 <br>
 	<br>
-
+<br>
+	<br>
+	<br>
+	<br>
 </div>
 </center>
 </section>
+
 <center>
-	<div style="padding-left: 5px">
-
-<div class="containerRegistroReportes">
-	<h5>
-		<i class="fas fa-clipboard"></i> Reportes
-	</h5>
-	<br>
-	<section>
-<div class="nuevo-vertical">
-
-<div class="btn-group">
-<li>
- <ul> <a href="listausuarios.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-table"></i>  Listado de usuarios</a></ul>	
- 
- <br>
- <ul> <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-male"></i>  Listado de clientes</a></ul>
- 
- <br>
- <br>
- <ul> <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-shopping-cart"></i>  Ventas por cliente</a></ul>
- 
- 
-</li>
+<div class="card-group">
+  <div class="card">
+    <img src="user_(2).jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Listado de usuarios creados</h5>
+      <ul> <a href="listausuarios.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-male"></i>  Ver detalle</a></ul>
+    </div>
+  </div>
+  <div class="card">
+        <img src="clientes.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Listado de clientes creados</h5>
+      <ul> <a href="listaclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-male"></i>  Ver detalle</a></ul>
+    </div>
+  </div>
+  <div class="card">
+        <img src="ventas_2.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Listado de ventas</h5>
+      <ul> <a href="detalleclientes.jsp" class="btn btn-primary active" style="width: 15rem; background-color: #453b3b" aria-current="page"><i class="fas fa-male"></i>  Ver detalle</a></ul>
+    </div>
+  </div>
 </div>
-
-<script>
-	
-
-
-	
-	
-</script>
-
-
+</center>
 </body>
 </html> 
