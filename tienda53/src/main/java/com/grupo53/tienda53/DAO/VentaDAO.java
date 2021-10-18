@@ -189,17 +189,20 @@ public class VentaDAO {
 
 			try {
 				// prepare la sentencia en la base de datos
-				PreparedStatement consulta = conex.getConnection()
-						.prepareStatement("SELECT `AUTO_INCREMENT` " + "FROM  INFORMATION_SCHEMA.TABLES "
-								+ "WHERE TABLE_SCHEMA = 'tienda' " + "AND   TABLE_NAME   = 'ventas';");
+				//PreparedStatement consulta = conex.getConnection()
+				//		.prepareStatement("SELECT `AUTO_INCREMENT` " + "FROM  INFORMATION_SCHEMA.TABLES "
+				//				+ "WHERE TABLE_SCHEMA = 'tienda' " + "AND   TABLE_NAME   = 'ventas';");
 
+				PreparedStatement consulta = conex.getConnection().prepareStatement("select COUNT(*) FROM ventas;");
+				
 				// ejecute la sentencia
 				ResultSet res = consulta.executeQuery();
 
 				// cree un objeto para cada encontrado en la base de datos basado en la clase
 				// entidad con los datos encontrados
 				while (res.next()) {
-					contador = (res.getInt("AUTO_INCREMENT"));
+				//	contador = (res.getInt("AUTO_INCREMENT"));
+					contador = (res.getInt("COUNT(*)")) + 1;
 				}
 
 				// cerrar resultado, sentencia y conexión

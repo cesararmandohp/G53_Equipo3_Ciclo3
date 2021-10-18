@@ -434,15 +434,14 @@ background-attachment: fixed;
     
     
     
-.containerRegistroReportes{
+.card-group{
   width: 1000px;
-  height:400px;
+  height: 430px;
   background: #000000;
   margin: center;
   box-shadow: 7px 13px 37px #000;
   padding: 20px 30px;
   border-top: 15px solid #000066;
-  color: white;
 border-top-left-radius: 20px;
 border-top-right-radius: 20px;
 border-bottom-right-radius: 20px;
@@ -452,7 +451,10 @@ background-size: cover;
 background-attachment: fixed;
 }
 
-
+.card-img-top{
+	  width: 300px;
+  height: 250px;
+}
 
 .containerdetalleventas{
   width: 800px;
