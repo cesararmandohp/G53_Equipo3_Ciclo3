@@ -70,7 +70,7 @@
 	<!-- Navbar-->
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand links" href="index.html'"><i class="fas fa-store"></i></i> Bienvenid@ a la Tienda virtual</a>
+			<a class="navbar-brand links" href="index.html"><i class="fas fa-store"></i></i> Bienvenid@ a la Tienda virtual</a>
 		</div>
 	</nav>
 

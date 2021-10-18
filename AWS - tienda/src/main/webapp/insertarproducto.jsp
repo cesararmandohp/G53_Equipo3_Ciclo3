@@ -28,10 +28,14 @@
 <link href="style.css" rel="stylesheet" type="text/css" />
 
 <script>
-	var baseurl = "http://localhost:8080/listarproductos";
+	<!--var baseurl = "http://localhost:8080/listarproductos";-->
+	
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+		
 	function loadproductos() {
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("GET", baseurl, true);
+		xmlhttp.open("GET", baseUrl + "/listarproductos", true);
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 				var productos = JSON.parse(xmlhttp.responseText);
@@ -165,7 +169,10 @@
 	</nav>
 
 	<script>
-		function subirArchivo() {
+	var getUrl = window.location;
+	var baseUrl = getUrl.protocol + "//" + getUrl.host + "/"+ getUrl.pathname.split('/')[1];	
+		
+	function subirArchivo() {
 
 			try {
 
@@ -181,8 +188,12 @@
 					var arrayLineas = text.split("\n");
 
 					var xhr = new XMLHttpRequest();
-					xhr.open("DELETE",
-							"http://localhost:8080/eliminartodoproducto",true);
+					<!--xhr.open("DELETE",
+							"http://localhost:8080/eliminartodoproducto",true);-->
+					
+					xhr.open("DELETE", baseUrl + "/eliminartodoproducto",true);
+					
+					
 					xhr.send();
 
 					for (var i = 0; i < arrayLineas.length; i += 1) {
@@ -204,8 +215,8 @@
 						formData.append("iva_compra", arraydatos[4]);
 						formData.append("precio_venta", arraydatos[5]);
 						var xhr = new XMLHttpRequest();
-						xhr.open("POST",
-								"http://localhost:8080/registrarproducto");
+						<!--xhr.open("POST", "http://localhost:8080/registrarproducto");-->
+						xhr.open("POST", baseUrl + "/registrarproducto");
 
 						xhr.send(formData);
 					}
